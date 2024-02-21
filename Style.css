@@ -9,6 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #CEEAF7;
 }
 
 html {
@@ -37,6 +38,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 17vh;
+  background-color: #CEEAF7;
 }
 
 .nav-links {
@@ -48,14 +50,14 @@ nav {
 a {
   color: black;
   text-decoration: none;
-  text-decoration-color: white;
+  text-decoration-color: #5C415D;
 }
 
 a:hover {
-  color: rgb(218, 145, 51);
+  color: red;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(173, 94, 94);
+  text-decoration-color: #14B0C8;
 }
 
 .logo {
@@ -297,7 +299,7 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+  background: #F4FAD6;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
