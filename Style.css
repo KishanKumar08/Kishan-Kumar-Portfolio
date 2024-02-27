@@ -44,7 +44,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   /* height: 15vh; */
-  background-color: #72CAD5;
+  background-color: powderblue;
   padding: 20px 20px;
   /* top right bottom left */
 }
@@ -64,7 +64,7 @@ a {
 
 .nav-links li a:hover {
   color: #008FC8;
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 1rem;
   text-decoration-color: #14B0C8;
 }
