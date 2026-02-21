@@ -1,2 +1,5 @@
-# Kishan-Kumar-Portfolio
-🌟 Welcome to my personal portfolio GitHub repository!  🚀 Explore a curated collection of my projects, reflecting my skills and experiences in software development and design.  💻 From web applications to mobile apps, witness the evolution of my programming journey.
+### Kishan Kumar — Portfolio
+
+This repository contains the source code for my personal portfolio website.
+
+The site showcases my work in backend engineering, distributed systems, and AI infrastructure, including projects focused on event-driven architectures, scalable APIs, and production-grade LLM pipelines.

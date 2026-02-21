@@ -1,0 +1,389 @@
+@import "tailwindcss";
+
+:root {
+  --background: 220 15% 7%;
+  --foreground: 220 8% 95%;
+  --card: 220 15% 9%;
+  --card-foreground: 220 8% 95%;
+  --popover: 220 15% 9%;
+  --popover-foreground: 220 8% 95%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 220 15% 7%;
+  --primary-glow: 217 91% 70%;
+  --primary-dark: 217 91% 45%;
+  --secondary: 260 60% 65%;
+  --secondary-foreground: 220 15% 7%;
+  --secondary-glow: 260 60% 75%;
+  --tertiary: 160 84% 39%;
+  --tertiary-glow: 160 84% 49%;
+  --muted: 220 15% 15%;
+  --muted-foreground: 220 8% 65%;
+  --accent: 220 15% 20%;
+  --accent-foreground: 220 8% 95%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 220 8% 95%;
+  --border: 220 15% 20%;
+  --input: 220 15% 15%;
+  --ring: 217 91% 60%;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--secondary))
+  );
+  --gradient-hero: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--secondary)),
+    hsl(var(--tertiary))
+  );
+  --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+  --gradient-text: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--secondary))
+  );
+
+  /* Shadows & Effects */
+  --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+  --shadow-card: 0 10px 30px -10px hsl(220 15% 5% / 0.8);
+  --shadow-elevation: 0 20px 40px -15px hsl(220 15% 5% / 0.9);
+
+  /* Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --radius: 0.75rem;
+
+  --sidebar-background: 0 0% 98%;
+
+  --sidebar-foreground: 240 5.3% 26.1%;
+
+  --sidebar-primary: 240 5.9% 10%;
+
+  --sidebar-primary-foreground: 0 0% 98%;
+
+  --sidebar-accent: 240 4.8% 95.9%;
+
+  --sidebar-accent-foreground: 240 5.9% 10%;
+
+  --sidebar-border: 220 13% 91%;
+
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+/* * {
+  border-color: hsl(var(--border));
+} */
+
+body {
+  background: text-foreground font-inter overflow-x-hidden;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow {
+  filter: drop-shadow(var(--shadow-glow));
+}
+
+.glow-card {
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.glow-card:hover {
+  box-shadow: var(--shadow-elevation);
+  transform: translateY(-5px);
+}
+
+/* Animated background */
+.animated-bg {
+  background: var(--gradient-hero);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Button variants */
+.btn-hero {
+  background: var(--gradient-primary);
+  transition: var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: var(--transition-smooth);
+}
+
+.btn-hero:hover::before {
+  left: 100%;
+}
+
+.btn-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevation);
+}
+
+/* Typewriter cursor */
+.typewriter-cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+/* Skill progress bars */
+.skill-card {
+  background: var(--gradient-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--border));
+  transition: var(--transition-smooth);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Project cards */
+.project-card {
+  background: var(--gradient-card);
+  border: 1px solid hsl(var(--border));
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-elevation);
+}
+
+/* Navigation */
+.nav-glass {
+  backdrop-filter: blur(20px);
+  background: hsl(var(--background) / 0.8);
+  border-bottom: 1px solid hsl(var(--border) / 0.5);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform-origin: 0%;
+  z-index: 50;
+}
+
+/* Custom animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Custom blinking animation */
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--tw-border-opacity, 1); }
+}
+
+.animate-blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+/* Optional glowing gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #f43f5e, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow {
+  text-shadow: 0 0 8px rgba(255, 99, 132, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+.animate-pulse-slow {
+  animation: pulse 6s ease-in-out infinite;
+}
+
+canvas#dotCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+
+/* gradient-text */
+.gradient-text {
+  background: linear-gradient(90deg, #a855f7, #ec4899, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* gradient-card */
+.bg-gradient-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  backdrop-filter: blur(12px);
+}
+
+/* button gradient */
+.btn-gradient {
+  background: linear-gradient(to right, #a855f7, #ec4899, #facc15);
+  color: white;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* background-dot-motion */
+.animated-dots-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#ffffff11 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: moveDots 20s linear infinite;
+}
+
+@keyframes moveDots {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 100px;
+  }
+}
