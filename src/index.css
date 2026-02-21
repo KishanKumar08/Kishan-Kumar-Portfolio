@@ -124,6 +124,10 @@ html {
   scroll-behavior: smooth;
 }
 
+
+section {
+  scroll-margin-top: 80px;
+}
 /* Custom gradient text */
 .gradient-text {
   background: var(--gradient-text);
