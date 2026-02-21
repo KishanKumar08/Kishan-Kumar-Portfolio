@@ -11,18 +11,11 @@ import ScrollHandler from '@/components/ScrollHandler';
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
 
-  const handleSectionClick = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
       <div className="min-h-screen bg-background font-inter">
         <ScrollHandler onSectionChange={setActiveSection} />
-        <Navbar activeSection={activeSection} onSectionClick={handleSectionClick} />
+        <Navbar activeSection={activeSection} />
         <main>
           <Hero />
           <About />
