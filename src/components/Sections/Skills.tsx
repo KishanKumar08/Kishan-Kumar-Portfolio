@@ -34,6 +34,7 @@ const resumeSkills = {
     "Concurrency Control",
     "Retry Strategies",
   ],
+
   "AI Systems Engineering": [
     "LLM Pipelines",
     "RAG Architectures",
@@ -44,11 +45,12 @@ const resumeSkills = {
     "PyTorch",
     "ML Algorithms",
   ],
-  
+
   Databases: [
     "PostgreSQL",
     "MongoDB",
   ],
+
   "Cloud & Infrastructure": [
     "AWS",
     "GCP",
@@ -56,16 +58,18 @@ const resumeSkills = {
     "Kubernetes",
     "CI/CD",
   ],
-  
-  "Developer Tools & Workflow": [
-  "Git",
-  "GitHub",
-  "VS Code",
-  "Cursor",
-  "Replit",
-  "AI-assisted Development",
-  "Postman"
-]
+
+  "Frontend": [
+    "React.js",
+    "Redux Toolkit",
+    "TypeScript",
+    "JavaScript (ES6+)",
+    "HTML5",
+    "CSS3",
+    "Tailwind CSS",
+    "REST API Integration",
+    "Responsive Web Design"
+  ]
 };
 
 const headingColors = [
@@ -99,9 +103,8 @@ const Skills: React.FC = () => {
               className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:border-purple-400/40 transition-all duration-300"
             >
               <h3
-                className={`text-xl font-semibold mb-6 ${
-                  headingColors[index % headingColors.length]
-                }`}
+                className={`text-xl font-semibold mb-6 ${headingColors[index % headingColors.length]
+                  }`}
               >
                 {title}
               </h3>

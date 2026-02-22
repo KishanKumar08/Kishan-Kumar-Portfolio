@@ -169,9 +169,9 @@ const Hero: React.FC = () => {
       </div>
 
       {/* BOTTOM SOCIAL ICONS */}
-      <div className="flex lg:absolute lg:left-16 lg:bottom-12 mt-16 lg:mt-0 flex-row lg:flex-col gap-4 lg:space-y-6 z-20 justify-center">
+      <div className="flex lg:absolute lg:left-16 lg:bottom-12 mt-16 lg:mt-0 flex-row lg:flex-col gap-4 lg:space-y-6 z-20 justify-center mb-4">
 
-        <a href="https://www.linkedin.com/kishan-kumar08" className="w-11 h-11 flex items-center justify-center bg-white rounded-full text-black" target="_blank">
+        <a href="https://www.linkedin.com/in/kishan-kumar08/" className="w-11 h-11 flex items-center justify-center bg-white rounded-full text-black" target="_blank">
           <FiLinkedin />
         </a>
         <a href="https://www.github.com/KishanKumar08" className="w-11 h-11 flex items-center justify-center bg-white rounded-full text-black" target="_blank">
